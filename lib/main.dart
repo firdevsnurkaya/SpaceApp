@@ -4,7 +4,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/services.dart';
-
+// ignore: depend_on_referenced_packages
+import 'package:intl/date_symbol_data_local.dart';
 import 'Mercury_page.dart';
 import 'Mars_page.dart';
 import 'Venus_page.dart';
@@ -15,7 +16,9 @@ import 'Saturn_page.dart';
 import 'Uranus_page.dart';
 
 void main() {
-  runApp(MyApp());
+  initializeDateFormatting('tr_TR', null).then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
