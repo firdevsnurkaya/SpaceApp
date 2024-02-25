@@ -5,10 +5,10 @@ class JupiterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All About Jupiter'),
+        title: const Text('All About Jupiter'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -19,18 +19,18 @@ class JupiterPage extends StatelessWidget {
               width: 200,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Başlık ekle
-            Text(
+            const Text(
               'All About Jupiter',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Makale metni ekle
-            Text(
+            const Text(
               'Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter is primarily composed of hydrogen, but helium is present in vast quantities.',
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,

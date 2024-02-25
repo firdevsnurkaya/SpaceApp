@@ -25,15 +25,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'All About Space',
       theme: ThemeData.dark().copyWith(
-        primaryColor: Color.fromARGB(255, 74, 72, 72),
-        hintColor: Color.fromARGB(255, 7, 7, 7),
+        primaryColor: const Color.fromARGB(255, 74, 72, 72),
+        hintColor: const Color.fromARGB(255, 7, 7, 7),
         scaffoldBackgroundColor: Colors.black,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyText1: TextStyle(color: Colors.white),
           bodyText2: TextStyle(color: Colors.white),
           headline4: TextStyle(color: Colors.white),
         ),
-        colorScheme: ColorScheme.dark(
+        colorScheme: const ColorScheme.dark(
           background: Colors.black,
         ),
       ),
@@ -78,10 +78,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PLANETS'),
+        title: const Text('PLANETS'),
         actions: [
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                 context,
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.account_circle),
+            icon: const Icon(Icons.account_circle),
             onPressed: () {
               Navigator.push(
                 context,
@@ -104,9 +104,9 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 103, 103, 104),
+                color: Color.fromARGB(255, 103, 103, 104),
               ),
               child: Text(
                 'ALL ABOUT SPACE',
@@ -117,13 +117,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              title: Text('PLANETS'),
+              title: const Text('PLANETS'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('SPACE'),
+              title: const Text('SPACE'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(
@@ -144,10 +144,10 @@ class _HomePageState extends State<HomePage> {
                   height: 200,
                   fit: BoxFit.cover,
                 )
-              : SizedBox(),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+              : const SizedBox(),
+          const SizedBox(height: 20),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               'Discover information about planets',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -248,18 +248,18 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'User Information:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text('Name: $_name'),
             Text('Email: $_email'),
             Text('Location: $_location'),
@@ -290,21 +290,21 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Theme Settings'),
+        title: const Text('Theme Settings'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Theme:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               children: [
-                Text('Dark Mode'),
+                const Text('Dark Mode'),
                 Switch(
                   value: _themeMode == ThemeMode.dark,
                   onChanged: (value) {
@@ -318,7 +318,7 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage> {
             ),
             Row(
               children: [
-                Text('Light Mode'),
+                const Text('Light Mode'),
                 Switch(
                   value: _themeMode == ThemeMode.light,
                   onChanged: (value) {

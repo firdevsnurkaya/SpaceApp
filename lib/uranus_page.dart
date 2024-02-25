@@ -5,7 +5,7 @@ class UranusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Uranus Details'),
+        title: const Text('Uranus Details'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -16,15 +16,15 @@ class UranusPage extends StatelessWidget {
             width: 200,
             height: 200,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           // Başlık
-          Text(
+          const Text(
             'What you need to know about Uranus',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           // Makale
-          Expanded(
+          const Expanded(
             child: SingleChildScrollView(
               padding: EdgeInsets.all(20),
               child: Text(

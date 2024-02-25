@@ -5,10 +5,10 @@ class NeptunePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All About Neptune'),
+        title: const Text('All About Neptune'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -19,18 +19,18 @@ class NeptunePage extends StatelessWidget {
               width: 200,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Başlık ekle
-            Text(
+            const Text(
               'All About Neptune',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Makale metni ekle
-            Text(
+            const Text(
               'Neptune is the eighth and farthest-known Solar planet from the Sun. It is a gas giant. Neptune is the fourth-largest planet by diameter and the third-largest by mass. Among the giant planets in the Solar System, Neptune is the most dense. Neptune is 17 times the mass of Earth and is slightly more massive than its near-twin Uranus.',
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,

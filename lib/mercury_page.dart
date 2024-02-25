@@ -5,10 +5,10 @@ class MercuryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All About Mercury'),
+        title: const Text('All About Mercury'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -19,18 +19,18 @@ class MercuryPage extends StatelessWidget {
               width: 200,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Add a title
-            Text(
+            const Text(
               'What You Need to Know About Mercury',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Add article text
-            Text(
+            const Text(
               'Mercury is the smallest and closest planet to the Sun in the Solar System. It has a very thin atmosphere, and there is not much atmospheric activity observed on its surface. The surface of Mercury is very hot and rocky. Additionally, Mercury rotates on its axis while orbiting the Sun. Therefore, a day on Mercury lasts almost twice as long as its year. Mercury has no moons and completes a full orbit around the Sun in 88 Earth days.',
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
@@ -41,4 +41,3 @@ class MercuryPage extends StatelessWidget {
     );
   }
 }
-
