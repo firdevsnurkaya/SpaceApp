@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'All About Space',
       theme: ThemeData.dark().copyWith(
         primaryColor: Color.fromARGB(255, 74, 72, 72),
