@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SaturnPage extends StatelessWidget {
+  const SaturnPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

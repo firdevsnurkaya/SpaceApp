@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class UranusPage extends StatelessWidget {
+  const UranusPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VenusPage extends StatelessWidget {
+  const VenusPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class VenusPage extends StatelessWidget {
           // Başlık ekleyelim
           const Text(
             'What you need to know about Venus',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),

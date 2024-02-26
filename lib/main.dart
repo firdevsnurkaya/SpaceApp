@@ -17,11 +17,13 @@ import 'Uranus_page.dart';
 
 void main() {
   initializeDateFormatting('tr_TR', null).then((_) {
-    runApp(MyApp());
+    runApp(const MyApp());
   });
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,12 +42,14 @@ class MyApp extends StatelessWidget {
           background: Colors.black,
         ),
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -97,7 +101,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
+                MaterialPageRoute(builder: (context) => const ProfilePage()),
               );
             },
           ),
@@ -131,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SpacePage()),
+                  MaterialPageRoute(builder: (context) => const SpacePage()),
                 );
               },
             ),
@@ -173,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                           case 'venus':
                             return VenusPage();
                           case 'earth':
-                            return EarthPage();
+                            return const EarthPage();
                           case 'mars':
                             return MarsPage();
                           case 'jupiter':
@@ -230,6 +234,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }

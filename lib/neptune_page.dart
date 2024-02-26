@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NeptunePage extends StatelessWidget {
+  const NeptunePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

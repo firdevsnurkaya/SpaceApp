@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MercuryPage extends StatelessWidget {
+  const MercuryPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

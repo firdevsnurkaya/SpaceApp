@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class SpacePage extends StatefulWidget {
+  const SpacePage({super.key});
+
   @override
   State<SpacePage> createState() => _SpacePageState();
 }
@@ -34,10 +36,10 @@ class _SpacePageState extends State<SpacePage> {
               lastDay: DateTime.utc(2050, 12, 31),
               onDaySelected: _onDaySelected,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Text("Selected date: " + today.toString().split(" ")[0])
+            Text("Selected date: ${today.toString().split(" ")[0]}")
           ],
         ));
   }

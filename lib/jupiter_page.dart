@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class JupiterPage extends StatelessWidget {
+  const JupiterPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
