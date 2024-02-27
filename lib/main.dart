@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _fetchAstronomyPictureOfTheDay() async {
     const apiUrl =
-        'https://api.nasa.gov/planetary/apod?api_key=rVc9oYjbnJmr2f6LFLK39SBVL3hYuzbECGqw4Hw8';
+        'https://api.nasa.gov/planetary/apod?api_key=BgZJsmFBzdlEM1Sf8Uf9PcoIP1NNVcs8XH4r4zBC';
 
     final response = await http.get(Uri.parse(apiUrl));
 
@@ -363,3 +363,4 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage> {
     }
   }
 }
+
