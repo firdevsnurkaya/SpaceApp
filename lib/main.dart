@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/news.dart';
 import 'package:flutter_application_1/space.dart';
+import 'package:flutter_application_1/space_ships.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/services.dart';
-// ignore: depend_on_referenced_packages
 import 'package:intl/date_symbol_data_local.dart';
 import 'Mercury_page.dart';
 import 'Mars_page.dart';
@@ -23,7 +23,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,20 +49,18 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key});
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  late String _planetName;
   late String _apodImageUrl = '';
 
   @override
   void initState() {
     super.initState();
-    _planetName = _getRandomPlanet();
     _fetchAstronomyPictureOfTheDay();
   }
 
@@ -154,6 +152,17 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => NewsPages(key: UniqueKey())),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('SPACE SHIPS'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GamePage (key: UniqueKey())),
                   );
                 },
               ),
@@ -253,7 +262,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({Key? key});
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
