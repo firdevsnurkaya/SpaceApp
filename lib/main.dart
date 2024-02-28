@@ -16,7 +16,6 @@ import 'Neptune_page.dart';
 import 'Saturn_page.dart';
 import 'Uranus_page.dart';
 
-
 void main() {
   initializeDateFormatting('tr_TR', null).then((_) {
     runApp(const MyApp());
@@ -85,132 +84,140 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('PLANETS'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ThemeSettingsPage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.account_circle),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfilePage()),
-              );
-            },
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 103, 103, 104),
-              ),
-              child: Text(
-                'ALL ABOUT SPACE',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              title: const Text('PLANETS'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('SPACE'),
-              onTap: () {
-                Navigator.pop(context);
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('PLANETS'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SpacePage()),
+                  MaterialPageRoute(builder: (context) => ThemeSettingsPage()),
                 );
               },
             ),
-            ListTile(
-              title: const Text('NEWS'),
-              onTap: () {
-                Navigator.pop(context);
+            IconButton(
+              icon: const Icon(Icons.account_circle),
+              onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  NewsPages(key: UniqueKey())),
+                  MaterialPageRoute(builder: (context) => const ProfilePage()),
                 );
               },
             ),
           ],
         ),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _apodImageUrl.isNotEmpty
-              ? Image.network(
-                  _apodImageUrl,
-                  height: 200,
-                  fit: BoxFit.cover,
-                )
-              : const SizedBox(),
-          const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              'Discover information about planets',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              SizedBox(
+                height: 80,
+                child: const DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 103, 103, 104),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'ALL ABOUT SPACE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                title: const Text('PLANETS'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: const Text('SPACE'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SpacePage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('NEWS'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NewsPages(key: UniqueKey())),
+                  );
+                },
+              ),
+            ],
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 8,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(_getPlanetName(index)),
-                  onTap: () {
-                    String planetName = _getPlanetName(index).toLowerCase();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        switch (planetName) {
-                          case 'mercury':
-                            return MercuryPage();
-                          case 'venus':
-                            return VenusPage();
-                          case 'earth':
-                            return const EarthPage();
-                          case 'mars':
-                            return MarsPage();
-                          case 'jupiter':
-                            return JupiterPage();
-                          case 'neptune':
-                            return NeptunePage();
-                          case 'saturn':
-                            return SaturnPage();
-                          case 'uranus':
-                            return UranusPage();
-                          default:
-                            throw Exception('Invalid planet name');
-                        }
-                      }),
-                    );
-                  },
-                );
-              },
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _apodImageUrl.isNotEmpty
+                ? Image.network(
+                    _apodImageUrl,
+                    height: 200,
+                    fit: BoxFit.cover,
+                  )
+                : const SizedBox(),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Discover information about planets',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-        ],
+            Expanded(
+              child: ListView.builder(
+                itemCount: 8,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(_getPlanetName(index)),
+                    onTap: () {
+                      String planetName = _getPlanetName(index).toLowerCase();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          switch (planetName) {
+                            case 'mercury':
+                              return MercuryPage();
+                            case 'venus':
+                              return VenusPage();
+                            case 'earth':
+                              return const EarthPage();
+                            case 'mars':
+                              return MarsPage();
+                            case 'jupiter':
+                              return JupiterPage();
+                            case 'neptune':
+                              return NeptunePage();
+                            case 'saturn':
+                              return SaturnPage();
+                            case 'uranus':
+                              return UranusPage();
+                            default:
+                              throw Exception('Invalid planet name');
+                          }
+                        }),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -375,4 +382,3 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage> {
     }
   }
 }
-
