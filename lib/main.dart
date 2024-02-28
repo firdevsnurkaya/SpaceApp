@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/astronauts.dart';
 import 'package:flutter_application_1/news.dart';
 import 'package:flutter_application_1/space.dart';
-import 'package:flutter_application_1/space_ships.dart';
+// import 'package:flutter_application_1/space_ships.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
@@ -155,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
-              ListTile(
+              /*ListTile(
                 title: const Text('SPACE SHIPS'),
                 onTap: () {
                   Navigator.pop(context);
@@ -163,6 +164,17 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => GamePage (key: UniqueKey())),
+                  );
+                },
+              ),*/
+              ListTile(
+                title: const Text('ASTRONAUTS'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AstronautPage (key: UniqueKey())),
                   );
                 },
               ),

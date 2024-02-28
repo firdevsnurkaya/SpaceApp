@@ -1,4 +1,4 @@
-import 'dart:async';
+/*import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -180,5 +180,6 @@ class _GamePageState extends State<GamePage> {
         ),
       ),
     );
-  }
-}
+  } # İSTEDİĞİM GİBİ YAPAMADIM 
+}*/
+
