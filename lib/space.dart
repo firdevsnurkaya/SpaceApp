@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/model/konum.dart';
 import 'package:flutter_application_1/model/nasa_apod.dart';
-//import 'package:flutter_application_1/model/spaceX.dart';
+import 'package:flutter_application_1/model/spaceX.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class SpacePage extends StatefulWidget {
@@ -15,7 +15,7 @@ class SpacePage extends StatefulWidget {
 class _SpacePageState extends State<SpacePage> {
   DateTime today = DateTime.now();
   late Future<Map<String, dynamic>?> _issLocationFuture;
-  // late Future<List<dynamic>?> _spaceXMissionsFuture;
+  late Future<List<dynamic>?> _spaceXMissionsFuture;
   late Future<Map<String, dynamic>?>
       _apodFuture; // APOD verilerini içeren Future nesnesi
 
@@ -23,7 +23,7 @@ class _SpacePageState extends State<SpacePage> {
   void initState() {
     super.initState();
     _issLocationFuture = fetchISSLocation();
-    //  _spaceXMissionsFuture = fetchSpaceXMission(today);
+      _spaceXMissionsFuture = fetchSpaceXMission(today);
     _apodFuture = fetchAPOD(
         today); // APOD verilerini çekmek için Future nesnesini başlatın
   }
@@ -33,7 +33,7 @@ class _SpacePageState extends State<SpacePage> {
       today = day;
       _issLocationFuture =
           fetchISSLocation(); // Her tarih seçildiğinde API'yi çağır
-      //  _spaceXMissionsFuture = fetchSpaceXMission(day);
+        _spaceXMissionsFuture = fetchSpaceXMission(day);
       _apodFuture = fetchAPOD(day); // Seçilen tarihe göre APOD verilerini çekin
     });
   }
@@ -102,7 +102,7 @@ class _SpacePageState extends State<SpacePage> {
                         }
                       },
                     ),
-                    /*    FutureBuilder<List<dynamic>?>(
+                        FutureBuilder<List<dynamic>?>(
                       future: _spaceXMissionsFuture,
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -131,7 +131,7 @@ class _SpacePageState extends State<SpacePage> {
                           }
                         }
                       },
-                    ),*/
+                    ),
                     FutureBuilder<Map<String, dynamic>?>(
                       future:
                           _apodFuture, // APOD verilerini içeren Future nesnesi

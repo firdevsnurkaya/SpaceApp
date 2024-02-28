@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/news.dart';
 import 'package:flutter_application_1/space.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -14,6 +15,7 @@ import 'Jupiter_page.dart';
 import 'Neptune_page.dart';
 import 'Saturn_page.dart';
 import 'Uranus_page.dart';
+
 
 void main() {
   initializeDateFormatting('tr_TR', null).then((_) {
@@ -136,6 +138,16 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const SpacePage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('NEWS'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  NewsPages(key: UniqueKey())),
                 );
               },
             ),
