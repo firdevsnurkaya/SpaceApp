@@ -5,6 +5,7 @@ import 'package:flutter_application_1/profile_page.dart';
 import 'package:flutter_application_1/space_calendar.dart';
 import 'package:flutter_application_1/weather.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/spacex.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key});
@@ -116,6 +117,18 @@ class HomePageState extends State<HomePage> {
                       MaterialPageRoute(
                           builder: (context) =>
                               AstronautPage(key: UniqueKey())),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Text('SPACE X'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              SpaceXPage()),
                     );
                   },
                 ),
