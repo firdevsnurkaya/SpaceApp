@@ -137,7 +137,7 @@ class HomePageState extends State<HomePage> {
                 },
               ),
               ListTile(
-                title: const Text('SPACE'),
+                title: const Text('SPACE CALENDAR '),
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.push(
