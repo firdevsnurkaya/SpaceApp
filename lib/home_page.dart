@@ -1,3 +1,4 @@
+import 'package:flutter_application_1/about.dart';
 import 'package:flutter_application_1/astronauts.dart';
 import 'package:flutter_application_1/planets.dart';
 import 'package:flutter_application_1/profile_page.dart';
@@ -115,6 +116,17 @@ class HomePageState extends State<HomePage> {
                       MaterialPageRoute(
                           builder: (context) =>
                               AstronautPage(key: UniqueKey())),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Text('ABOUT'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AboutPage()),
                     );
                   },
                 ),
