@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
       title: 'Astronaut App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.black, // Arka plan rengi siyah
+        scaffoldBackgroundColor: Colors.black,
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Colors.white), // Yazı rengi beyaz
-          bodyMedium: TextStyle(color: Colors.white), // Yazı rengi beyaz
-          titleLarge: TextStyle(color: Colors.white), // Başlık yazı rengi beyaz
+          bodyLarge: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.white),
+          titleLarge: TextStyle(color: Colors.white),
         ),
       ),
       home: const AstronautPage(),
@@ -41,19 +41,39 @@ class AstronautPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                'Important Achievements of Our Astronauts', // Açıklama metni
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white), // Açıklama metni stili
+                'Important Achievements of Our Astronauts',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               SizedBox(height: 20),
               Image(
-                image: AssetImage('assets/astronot.jpg'), // İstediğiniz bir fotoğrafın yolunu ekleyin
+                image: AssetImage('assets/astronot.jpg'),
                 height: 200,
                 fit: BoxFit.cover,
               ),
               SizedBox(height: 20),
               Text(
-                'In this page, we showcase some of our remarkable astronauts.', // İngilizce açıklama metni
-                style: TextStyle(fontSize: 16, color: Colors.white), // İngilizce açıklama metni stili
+                'IN THIS PAGE, WE SHOWCASE SOME OF OUR REMARKABLE ASTRONAUTS.',
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
+              SizedBox(height: 20),
+              AstronautCard(
+                name: 'Alper Gezeravcı',
+                imagePath: 'assets/alper_gezeravci.png',
+                description: 'Gezeravcı, who served as a fighter pilot in the Turkish Air Force, '
+                    'flew many aircraft including T-41, SF-260, T-37, T-38, F-5, KC-135 and F-16 for 15 years. '
+                    'He also worked as a captain pilot at Turkish Airlines for seven years. '
+                    'Gezeravcı most recently served as the Standardization Squadron Academic Wing Commander '
+                    'as the responsible personnel at the 10th Base Command Unit in Adana. '
+                    'In 2012, he was dismissed from the Turkish Armed Forces in the Izmir Military Espionage '
+                    'FETO Conspiracy case and was acquitted in 2020 and returned to duty. '
+                    'He became Turkey\'s first astronaut with the launch of the Space company\'s Axiom Mission 3 mission, '
+                    'which took place on January 19, 2024 at 00.49 CEST at the Kennedy Space Center Launch Complex 39 '
+                    'in Florida, USA. According to the Official Gazette decision dated February 13, 2024, Turkey Space '
+                    'He was appointed as a member of the board of directors of the agency.',
               ),
               SizedBox(height: 20),
               AstronautCard(
@@ -90,7 +110,6 @@ class AstronautPage extends StatelessWidget {
                     'the youngest American astronaut to have traveled to space, having done so at '
                     'the age of 32.',
               ),
-              // Add more AstronautCard widgets for other astronauts
             ],
           ),
         ),
@@ -101,31 +120,31 @@ class AstronautPage extends StatelessWidget {
 
 class AstronautCard extends StatelessWidget {
   final String name;
-  final String imagePath; // Yerel resim yolu
+  final String imagePath;
   final String description;
 
   const AstronautCard({
     Key? key,
     required this.name,
-    required this.imagePath, // Yerel resim yolu gerekiyor
+    required this.imagePath,
     required this.description,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container( // Container ile kartı sarmak
+    return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white), // Çerçeve rengi beyaz
+        border: Border.all(color: Colors.white),
       ),
       child: Card(
         elevation: 4,
-        color: Colors.black, // Kart arka plan rengi siyah
+        color: Colors.black,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              imagePath, // Yerel resim yolu burada kullanılıyor
+              imagePath,
               height: 200,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -137,12 +156,12 @@ class AstronautCard extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white), // Yazı rengi beyaz
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     description,
-                    style: const TextStyle(fontSize: 16, color: Colors.white), // Yazı rengi beyaz
+                    style: const TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ],
               ),
@@ -153,3 +172,4 @@ class AstronautCard extends StatelessWidget {
     );
   }
 }
+
