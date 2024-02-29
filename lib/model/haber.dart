@@ -1,23 +1,23 @@
-import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-void main() {
-  fetchData();
-}
+Future<Map<String, dynamic>?> fetchSpaceNews() async {
+  final String apiKey = '7c1bcffeb7msh5da571d43da9da9p1a2d25jsne5eeb7a444b1';
+  final String host = 'spacenews.p.rapidapi.com';
 
-Future<void> fetchData() async {
-  var headers = {
-    "X-RapidAPI-Key": "9f0f3aa12bmsh08e8b29cc2c1dcdp17e106jsn8d5621c720bd",
-    "X-RapidAPI-Host": "spaceflight-news2.p.rapidapi.com"
-  };
+  final Uri url = Uri.https(host, '/news');
 
-  var uri = Uri.parse("https://spaceflight-news2.p.rapidapi.com/v3/info");
-
-  var response = await http.get(uri, headers: headers);
+  final response = await http.get(
+    url,
+    headers: {
+      'X-RapidAPI-Key': apiKey,
+      'X-RapidAPI-Host': host,
+    },
+  );
 
   if (response.statusCode == 200) {
-    print(response.body);
+    return json.decode(response.body);
   } else {
-    print('Request failed with status: ${response.statusCode}');
+    throw Exception('Failed to load space news');
   }
 }
