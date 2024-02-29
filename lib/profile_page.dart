@@ -29,14 +29,14 @@ class ProfilePageState extends State<ProfilePage> {
     _email1 = 'firdevsnurkaya@gmail.com';
     _location1 = 'Istanbul';
     _imagePath1 = 'assets/firdevs.jpg';
-    _about1 = "";
+    _about1 = "Technical Team Lead";
 
     // Initialize user 2
     _name2 = 'Birsen Dalmış';
     _email2 = 'birsen.dlms.80@gmail.com';
     _location2 = 'Osmaniye';
     _imagePath2 = 'assets/birsen.jpeg';
-    _about2 = "";
+    _about2 = "Computer Engineer";
   }
 
   @override
