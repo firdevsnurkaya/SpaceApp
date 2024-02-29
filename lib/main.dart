@@ -16,6 +16,7 @@ import 'Jupiter_page.dart';
 import 'Neptune_page.dart';
 import 'Saturn_page.dart';
 import 'Uranus_page.dart';
+import 'profile_page.dart'; 
 
 void main() {
   initializeDateFormatting('tr_TR', null).then((_) {
@@ -36,9 +37,9 @@ class MyApp extends StatelessWidget {
         hintColor: const Color.fromARGB(255, 7, 7, 7),
         scaffoldBackgroundColor: Colors.black,
         textTheme: const TextTheme(
-          bodyText1: TextStyle(color: Colors.white),
-          bodyText2: TextStyle(color: Colors.white),
-          headline4: TextStyle(color: Colors.white),
+          bodyLarge: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.white),
+          headlineMedium: TextStyle(color: Colors.white),
         ),
         colorScheme: const ColorScheme.dark(
           background: Colors.black,
@@ -53,10 +54,10 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   late String _apodImageUrl = '';
 
   @override
@@ -112,9 +113,9 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
-                child: const DrawerHeader(
+                child: DrawerHeader(
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 103, 103, 104),
                   ),
@@ -212,21 +213,21 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (context) {
                           switch (planetName) {
                             case 'mercury':
-                              return MercuryPage();
+                              return const MercuryPage();
                             case 'venus':
-                              return VenusPage();
+                              return const VenusPage();
                             case 'earth':
                               return const EarthPage();
                             case 'mars':
-                              return MarsPage();
+                              return const MarsPage();
                             case 'jupiter':
-                              return JupiterPage();
+                              return const JupiterPage();
                             case 'neptune':
-                              return NeptunePage();
+                              return const NeptunePage();
                             case 'saturn':
-                              return SaturnPage();
+                              return const SaturnPage();
                             case 'uranus':
-                              return UranusPage();
+                              return const UranusPage();
                             default:
                               throw Exception('Invalid planet name');
                           }
@@ -273,59 +274,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key});
-
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
-  late String _name;
-  late String _email;
-  late String _location;
-
-  @override
-  void initState() {
-    super.initState();
-    _name = _generateRandomString(8);
-    _email = _generateRandomString(8) + '@example.com';
-    _location = _generateRandomString(10);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'User Information:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Text('Name: $_name'),
-            Text('Email: $_email'),
-            Text('Location: $_location'),
-          ],
-        ),
-      ),
-    );
-  }
-
-  String _generateRandomString(int length) {
-    const _chars =
-        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    final _random = Random();
-    return String.fromCharCodes(Iterable.generate(
-        length, (_) => _chars.codeUnitAt(_random.nextInt(_chars.length))));
-  }
-}
 
 class ThemeSettingsPage extends StatefulWidget {
   @override

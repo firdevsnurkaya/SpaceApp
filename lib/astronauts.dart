@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.black, // Arka plan rengi siyah
         textTheme: const TextTheme(
-          bodyText1: TextStyle(color: Colors.white), // Yazı rengi beyaz
-          bodyText2: TextStyle(color: Colors.white), // Yazı rengi beyaz
-          headline6: TextStyle(color: Colors.white), // Başlık yazı rengi beyaz
+          bodyLarge: TextStyle(color: Colors.white), // Yazı rengi beyaz
+          bodyMedium: TextStyle(color: Colors.white), // Yazı rengi beyaz
+          titleLarge: TextStyle(color: Colors.white), // Başlık yazı rengi beyaz
         ),
       ),
       home: const AstronautPage(),
@@ -34,28 +34,28 @@ class AstronautPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Astronauts'),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text(
+              Text(
                 'Important Achievements of Our Astronauts', // Açıklama metni
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white), // Açıklama metni stili
               ),
-              const SizedBox(height: 20),
-              const Image(
+              SizedBox(height: 20),
+              Image(
                 image: AssetImage('assets/astronot.jpg'), // İstediğiniz bir fotoğrafın yolunu ekleyin
                 height: 200,
                 fit: BoxFit.cover,
               ),
-              const SizedBox(height: 20),
-              const Text(
+              SizedBox(height: 20),
+              Text(
                 'In this page, we showcase some of our remarkable astronauts.', // İngilizce açıklama metni
                 style: TextStyle(fontSize: 16, color: Colors.white), // İngilizce açıklama metni stili
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               AstronautCard(
                 name: 'Neil Armstrong',
                 imagePath: 'assets/armstrong.jpeg',
@@ -63,7 +63,25 @@ class AstronautPage extends StatelessWidget {
                     'who was the first person to walk on the Moon. He was also a naval aviator, '
                     'test pilot, and university professor.',
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
+              AstronautCard(
+                name: 'Yuri Gagarin',
+                imagePath: 'assets/yuri_gagarin.jpeg',
+                description: 'Yuri Alekseyevich Gagarin was a Soviet Air Forces pilot and cosmonaut who became the first human to journey into outer space, achieving a major milestone in the Space Race. His capsule, Vostok 1, completed an orbit of Earth on April 12, 1961.',
+              ),
+              SizedBox(height: 20),
+              AstronautCard(
+                name: 'John Glenn',
+                imagePath: 'assets/john_glenn.jpeg',
+                description: 'John Herschel Glenn Jr. was an American aviator, engineer, astronaut, and United States Senator. He became the first American to orbit the Earth, circling it three times in 1962 aboard Friendship 7.',
+              ),
+              SizedBox(height: 20),
+              AstronautCard(
+                name: 'Valentina Tereshkova',
+                imagePath: 'assets/valentina_tereshkova.jpeg',
+                description: 'Valentina Vladimirovna Tereshkova is a retired Soviet cosmonaut, engineer, and politician who became the first woman to have flown in space, having been selected from more than 400 applicants and five finalists to pilot Vostok 6 on June 16, 1963.',
+              ),
+              SizedBox(height: 20),
               AstronautCard(
                 name: 'Sally Ride',
                 imagePath: 'assets/sally_ride.jpeg',

@@ -74,6 +74,11 @@ flutter:
     - assets/astronot.jpg
     - assets/sally_ride.jpeg
     - assets/armstrong.jpeg
+    - assets/firdevs.jpg
+    - assets/yuri_gagarin.jpeg
+    - assets/john_glenn.jpeg
+    - assets/valentina_tereshkova.jpeg
+    - assets/birsen.jpeg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
