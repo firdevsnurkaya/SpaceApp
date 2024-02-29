@@ -16,7 +16,7 @@ import 'Jupiter_page.dart';
 import 'Neptune_page.dart';
 import 'Saturn_page.dart';
 import 'Uranus_page.dart';
-import 'profile_page.dart'; 
+import 'profile_page.dart';
 
 void main() {
   initializeDateFormatting('tr_TR', null).then((_) {
@@ -89,7 +89,7 @@ class HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text('PLANETS'),
           actions: [
-            IconButton(
+            /*IconButton(
               icon: const Icon(Icons.settings),
               onPressed: () {
                 Navigator.push(
@@ -97,7 +97,7 @@ class HomePageState extends State<HomePage> {
                   MaterialPageRoute(builder: (context) => ThemeSettingsPage()),
                 );
               },
-            ),
+            ),*/
             IconButton(
               icon: const Icon(Icons.account_circle),
               onPressed: () {
@@ -175,7 +175,7 @@ class HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => AstronautPage (key: UniqueKey())),
+                        builder: (context) => AstronautPage(key: UniqueKey())),
                   );
                 },
               ),
@@ -275,7 +275,7 @@ class HomePageState extends State<HomePage> {
 }
 
 
-class ThemeSettingsPage extends StatefulWidget {
+/*class ThemeSettingsPage extends StatefulWidget {
   @override
   _ThemeSettingsPageState createState() => _ThemeSettingsPageState();
 }
@@ -350,4 +350,4 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage> {
       ));
     }
   }
-}
+}*/
