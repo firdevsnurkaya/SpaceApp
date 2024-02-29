@@ -1,5 +1,6 @@
 import 'package:flutter_application_1/about.dart';
 import 'package:flutter_application_1/astronauts.dart';
+import 'package:flutter_application_1/iss.dart';
 import 'package:flutter_application_1/planets.dart';
 import 'package:flutter_application_1/profile_page.dart';
 import 'package:flutter_application_1/space_calendar.dart';
@@ -129,6 +130,18 @@ class HomePageState extends State<HomePage> {
                       MaterialPageRoute(
                           builder: (context) =>
                               SpaceXPage()),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Text('ISS EVENTS'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              SpaceEventsPage()),
                     );
                   },
                 ),
