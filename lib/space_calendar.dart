@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/model/konum.dart';
 import 'package:flutter_application_1/model/nasa_apod.dart';
 import 'package:flutter_application_1/model/spaceX.dart';
@@ -38,9 +37,6 @@ class _SpacePageState extends State<SpacePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SPACE CALENDAR'),
-      ),
       body: Column(
         children: [
           TableCalendar(
@@ -65,8 +61,7 @@ class _SpacePageState extends State<SpacePage> {
                   FutureBuilder<Map<String, dynamic>?>(
                     future: _issLocationFuture,
                     builder: (context, snapshot) {
-                      if (snapshot.connectionState ==
-                          ConnectionState.waiting) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
                         return const CircularProgressIndicator();
                       } else if (snapshot.hasError) {
                         return Text('Error: ${snapshot.error}');
@@ -86,13 +81,14 @@ class _SpacePageState extends State<SpacePage> {
                                   ),
                                 ),
                               ),
-                              Text("Selected date: ${today.toString().split(" ")[0]} "),
-                              Text("ISS Location: ${issLocation['iss_position']}")
+                              Text(
+                                  "Selected date: ${today.toString().split(" ")[0]} "),
+                              Text(
+                                  "ISS Location: ${issLocation['iss_position']}")
                             ],
                           );
                         } else {
-                          return const Text(
-                              'No ISS location data available.');
+                          return const Text('No ISS location data available.');
                         }
                       }
                     },
@@ -129,8 +125,7 @@ class _SpacePageState extends State<SpacePage> {
                   FutureBuilder<Map<String, dynamic>?>(
                     future: _apodFuture,
                     builder: (context, snapshot) {
-                      if (snapshot.connectionState ==
-                          ConnectionState.waiting) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
                         return const CircularProgressIndicator();
                       } else if (snapshot.hasError) {
                         return Text('Error: ${snapshot.error}');
