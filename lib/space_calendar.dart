@@ -137,7 +137,7 @@ class _SpacePageState extends State<SpacePage> {
                             children: [
                               const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 10),
-                                child: const Text(
+                                child: Text(
                                   "Astronomy Picture of the Day:",
                                   style: TextStyle(
                                     fontSize: 18,
