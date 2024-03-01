@@ -80,6 +80,7 @@ flutter:
     - assets/valentina_tereshkova.jpeg
     - assets/birsen.jpeg
     - assets/alper_gezeravci.png
+    - assets/space_gif.gif
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

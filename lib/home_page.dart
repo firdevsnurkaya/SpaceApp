@@ -98,17 +98,6 @@ class HomePageState extends State<HomePage> {
                     );
                   },
                 ),
-                /*ListTile(
-                title: const Text('SPACE SHIPS'),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => GamePage (key: UniqueKey())),
-                  );
-                },
-              ),*/
                 ListTile(
                   title: const Text('ASTRONAUTS'),
                   onTap: () {
