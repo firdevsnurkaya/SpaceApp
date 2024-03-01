@@ -14,7 +14,7 @@ class _AboutPageState extends State<AboutPage> {
       appBar: AppBar(
         title: const Text('ABOUT'),
       ),
-      body: Column(
+      body: const Column(
         children: [
           SizedBox(
             height: 50,

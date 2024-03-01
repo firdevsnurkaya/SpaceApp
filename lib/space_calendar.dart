@@ -41,7 +41,7 @@ class _SpacePageState extends State<SpacePage> {
         children: [
           TableCalendar(
             locale: "en_US",
-            rowHeight: 50,
+            rowHeight: 35,
             headerStyle: const HeaderStyle(
                 formatButtonVisible: false, titleCentered: true),
             availableGestures: AvailableGestures.all,
@@ -52,7 +52,7 @@ class _SpacePageState extends State<SpacePage> {
             onDaySelected: _onDaySelected,
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -72,8 +72,8 @@ class _SpacePageState extends State<SpacePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Padding(
-                                padding: EdgeInsets.symmetric(vertical: 10),
-                                child: const Text(
+                                padding: EdgeInsets.symmetric(vertical: 5),
+                                child: Text(
                                   "International Space Station Location:",
                                   style: TextStyle(
                                     fontSize: 18,
@@ -137,7 +137,7 @@ class _SpacePageState extends State<SpacePage> {
                             children: [
                               const Padding(
                                 padding: EdgeInsets.symmetric(vertical: 10),
-                                child: const Text(
+                                child: Text(
                                   "Astronomy Picture of the Day:",
                                   style: TextStyle(
                                     fontSize: 18,

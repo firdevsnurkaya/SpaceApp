@@ -116,9 +116,7 @@ class HomePageState extends State<HomePage> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              SpaceXPage()),
+                      MaterialPageRoute(builder: (context) => SpaceXPage()),
                     );
                   },
                 ),
@@ -129,8 +127,7 @@ class HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              SpaceEventsPage()),
+                          builder: (context) => SpaceEventsPage()),
                     );
                   },
                 ),
@@ -148,7 +145,7 @@ class HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          body: SpacePage()),
+          body: const SpacePage()),
     );
   }
 }
